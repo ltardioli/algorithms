@@ -25,8 +25,8 @@ func (maze *Maze) GetLocation(point Point) string {
 	return maze.building[point.X][point.Y]
 }
 
+//This solution finds a path of a maze, not the best path of it.
 func Walk(maze Maze, curr Point, seen *[][]bool, path *[]Point) bool {
-
 	// Base cases
 	// Off the grid
 	if curr.X < 0 || curr.X > len(maze.building[0]) || curr.Y < 0 || curr.Y > len(maze.building[0]) {

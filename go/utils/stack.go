@@ -1,12 +1,12 @@
-package parentesismatching
+package utils
 
 import "fmt"
 
-type CharOrString interface {
-	rune | string
+type AllowedTypes interface {
+	rune | string | int
 }
 
-type Stack[T CharOrString] struct {
+type Stack[T AllowedTypes] struct {
 	elements []T
 }
 

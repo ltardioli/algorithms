@@ -1,7 +1,9 @@
 package parentesismatching
 
+import "algostudy/utils"
+
 func CheckSimpleBalanced(expression string) bool {
-	var stack Stack[rune]
+	var stack utils.Stack[rune]
 	for _, s := range expression {
 		if s == '(' {
 			stack.Push(s)
@@ -17,7 +19,7 @@ func CheckSimpleBalanced(expression string) bool {
 }
 
 func CheckBalanced(expression string) bool {
-	var stack Stack[rune]
+	var stack utils.Stack[rune]
 	matching := map[rune]rune{
 		')': '(',
 		'}': '{',

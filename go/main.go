@@ -1,8 +1,8 @@
 package main
 
 import (
+	"algostudy/algo/maze"
 	"fmt"
-	"main/algo/maze"
 )
 
 func main() {
