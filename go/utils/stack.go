@@ -2,11 +2,11 @@ package utils
 
 import "fmt"
 
-type AllowedTypes interface {
+type StackTypes interface {
 	rune | string | int
 }
 
-type Stack[T AllowedTypes] struct {
+type Stack[T StackTypes] struct {
 	elements []T
 }
 
@@ -16,7 +16,7 @@ func (s *Stack[T]) Push(element T) {
 
 func (s *Stack[T]) Pop() (T, error) {
 	var zero T
-	if len(s.elements) <= 0 {
+	if s.IsEmpty() {
 		return zero, fmt.Errorf("empty stack")
 	} else {
 		e := s.elements[len(s.elements)-1]
